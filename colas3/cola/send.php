@@ -10,9 +10,9 @@ $connection = new AMQPStreamConnection(HOST, PORT, USER, PASS, VHOST);
 $channel = $connection->channel();
 
 $channel->queue_declare('hello', false, false, false, false);
-$msg = new AMQPMessage('https://www.youtube.com/watch?v=oDAw7vW7H0c');
+$msg = new AMQPMessage('https://www.youtube.com/watch?v=0CUXEYPHSuI');
 $channel->basic_publish($msg, '', 'hello');
-echo " [x] Sent 'https://www.youtube.com/watch?v=oDAw7vW7H0c'\n";
+echo "Se ha iniciado la descarga", "\n";
 $channel->close();
 $connection->close();
 ?>

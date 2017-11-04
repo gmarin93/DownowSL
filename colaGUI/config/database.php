@@ -78,6 +78,18 @@ return [
             'prefix' => '',
         ],
 
+        'rabbitmq' => [
+         'host'         => '127.0.0.1',
+         'port'         => 5672,
+         'username'     => 'guest',
+         'password'     => 'guest',
+         'vhost'        => '/',
+         'exchange'     => 'default_exchange_name',
+         'consumer_tag' => 'consumer',
+         'exchange_type'=> 'direct',
+         'content_type' => 'text/plain'
+    ],
+
     ],
 
     /*
@@ -104,17 +116,6 @@ return [
     |
     */
 
-    'redis' => [
 
-        'client' => 'predis',
-
-        'default' => [
-            'host' => env('REDIS_HOST', '127.0.0.1'),
-            'password' => env('REDIS_PASSWORD', null),
-            'port' => env('REDIS_PORT', 6379),
-            'database' => 0,
-        ],
-
-    ],
 
 ];

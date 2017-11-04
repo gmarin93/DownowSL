@@ -6,13 +6,15 @@
   </head>
   <body>
 
-    <form action="/../cola/send.php" enctype="multipart/form-data" method="post">
-  Videos Link:<br>
-  <input type="text" name="link" placeholder="YOUTUBE">
-  <br><br>
-  <input type="submit" value="Submit">
-</form>
+    {!! Form::open(array('url' => '/down_method ', 'action' => '', 'method'=>'post')) !!}
 
+    Video link:
+    <br><br>
+  {{ Form::text('link', '', array('placeholder' => 'Link del video', 'required')) }}
+    <br><br>
+    {!! Form::submit('Descargar')!!}
+      <br>
+    {!! Form::close() !!}
 
   </body>
 </html>

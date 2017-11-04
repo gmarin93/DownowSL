@@ -1,6 +1,7 @@
 <?php
 include(__DIR__ . '/config.php');
 
+
 use PhpAmqpLib\Connection\AMQPStreamConnection;
 use PhpAmqpLib\Message\AMQPMessage;
 

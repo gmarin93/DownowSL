@@ -13,7 +13,8 @@
       "fideloper/proxy": "~3.3",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
-        "vladimir-yuldashev/laravel-queue-rabbitmq": "5.4"
+        "vladimir-yuldashev/laravel-queue-rabbitmq": "5.4",
+         "laravelcollective/html": "~5.0"
     },
     "replace": {
         "videlalvaro/php-amqplib": "self.version"

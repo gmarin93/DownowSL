@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('/down_method','DownloadController@Download', function () {
+    return view::make('welcome');
+});

@@ -42,7 +42,7 @@ class DownloadController extends Controller
             $channel->queue_declare('hello', false, false, false, false);
             $msg = new AMQPMessage($receive);
             $channel->basic_publish($msg, '', 'hello');
-            echo "Se ha iniciado la descarga", "\n";
+            echo "La descarga ha finalizado", "\n";
             $channel->close();
             $connection->close();
 

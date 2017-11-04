@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::post('/down_method','DownloadController@Download', function () {
     return view::make('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

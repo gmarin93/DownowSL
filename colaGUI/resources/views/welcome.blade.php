@@ -10,7 +10,7 @@
 
     Video link:
     <br><br>
-  {{ Form::text('link', '', array('placeholder' => 'Link del video', 'required')) }}
+  {{ Form::text('link', '', array('placeholder' => 'Link del video', 'class'=>'form-control', 'required')) }}
     <br><br>
     {!! Form::submit('Descargar')!!}
       <br>

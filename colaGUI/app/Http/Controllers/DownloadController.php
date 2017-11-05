@@ -9,7 +9,7 @@ use App\Download;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
-
+use Illuminate\Support\Facades\Route;
 
 
 
@@ -47,9 +47,15 @@ class DownloadController extends Controller
 
 public function comeBack()
 {
+  $user_id= Auth::id();
 
-  Redirect::route('/home')->with('message','TEST');
-  //return \Redirect::route('home')->with('message', 'State saved correctly!!!');
+  $videos = new descargas;
+
+  $data=$videos->showVideos($user_id);
+
+  $this->insercion();
+  return redirect()->action('DownloadController@showVideos');
+  
 }
 
     /**
@@ -81,7 +87,7 @@ public function comeBack()
             $connection->close();
 
 
-            return redirect()->action('DownloadController@comeBack');
+            // return redirect()->action('DownloadController@comeBack');
 
         }
 
@@ -102,7 +108,7 @@ public function comeBack()
       else{
       $id=  $video->insercion($user_id, $link, $estado);
 
-      echo "El id es: ", $id;
+    //  echo "El id es: ", $id;
       }
 
          $this->download($user_id, $link, $estado);

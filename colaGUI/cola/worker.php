@@ -31,9 +31,11 @@ $data=json_decode($msg->body);
 try {
     $video = $dl->download($data->link);
   //  echo $video->getTitle(), "\n"; // Will return Phonebloks
-    echo "Datos:  ",$data->user_id," ", $data->link," ",$data->estado,"\n";
+    echo "Datos: Id de usuario: ",$data->user_id,"  Link video: ", $data->link," Estado: ",$data->estado,"\n";
     echo "El archivo ha sido Descargado","\n";
     //echo $msg;
+
+
 
 } catch (NotFoundException $e) {
     // Video not found

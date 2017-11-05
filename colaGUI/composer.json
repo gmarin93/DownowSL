@@ -1,4 +1,3 @@
-
 {
     "name": "laravel/laravel",
     "description": "The Laravel Framework.",
@@ -8,13 +7,14 @@
     "require": {
         "php": ">=5.6.4",
         "ext-bcmath": "*",
-      "ext-mbstring": "*",
-      "norkunas/youtube-dl-php": "^0.3.5",
-      "fideloper/proxy": "~3.3",
+        "ext-mbstring": "*",
+        "fideloper/proxy": "~3.3",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
-        "vladimir-yuldashev/laravel-queue-rabbitmq": "5.4",
-         "laravelcollective/html": "~5.0"
+        "laravelcollective/html": "~5.0",
+        "norkunas/youtube-dl-php": "^0.3.5",
+        "okipa/laravel-toggle-switch-button": "^1.0",
+        "vladimir-yuldashev/laravel-queue-rabbitmq": "5.4"
     },
     "replace": {
         "videlalvaro/php-amqplib": "self.version"

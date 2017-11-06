@@ -11,14 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'DownloadController@showVideos');
 
-Route::post('/down_method','DownloadController@Download', function () {
-    return view::make('welcome');
+
+Route::post('/down_method','DownloadController@comeBack', function () {
+
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'DownloadController@showVideos');

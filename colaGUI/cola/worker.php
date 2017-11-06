@@ -16,6 +16,7 @@ $channel->queue_declare('hello', false, false, false, false);
 echo ' [*] Waiting for messages. To exit press CTRL+C', "\n";
 $callback = function($msg) {
 
+
 $dl = new YoutubeDl([
     'continue' => true,
     'format' => 'bestvideo',
@@ -24,11 +25,17 @@ $dl = new YoutubeDl([
 
 
 $dl->setDownloadPath('/home/gmarin/Descargas');
+$data=json_decode($msg->body);
+
 
 try {
-    $video = $dl->download($msg->body);
-    echo $video->getTitle(), "\n"; // Will return Phonebloks
-    echo "Se ha descargado  ",$msg->body,"\n";
+    $video = $dl->download($data->link);
+  //  echo $video->getTitle(), "\n"; // Will return Phonebloks
+    echo "Datos: Id de usuario: ",$data->user_id,"  Link video: ", $data->link," Estado: ",$data->estado,"\n";
+    echo "El archivo ha sido Descargado","\n";
+    //echo $msg;
+
+
 
 } catch (NotFoundException $e) {
     // Video not found

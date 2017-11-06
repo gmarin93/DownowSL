@@ -229,7 +229,8 @@ return [
         'Form' => 'Collective\Html\FormFacade',
         'Html' => 'Collective\Html\HtmlFacade',
         'Input'=> Illuminate\Support\Facades\Input::class,
-
+        'ToggleSwitchButton'  => Okipa\LaravelToggleSwitchButton\Facades\ToggleSwitchButton::class,
+        'Route' => "Illuminate\Support\Facades\Route",
     ],
 
 ];

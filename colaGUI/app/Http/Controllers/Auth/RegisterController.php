@@ -38,7 +38,6 @@ class RegisterController extends Controller
     {
         $this->middleware('guest');
     }
-
     /**
      * Get a validator for an incoming registration request.
      *
@@ -67,5 +66,16 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+
+     public function update(UpdateAccount $Request)   {
+        $user = Auth::user();
+        
+        $user->update($request->all());
+
+        Flash::message('Your account has been updated!');
+
+        return Redirect::to('/home');
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 include(__DIR__ . '/config.php');
+//DES COMENTAR.
 include(__DIR__ . '/download.php');
 
 use PhpAmqpLib\Connection\AMQPStreamConnection;

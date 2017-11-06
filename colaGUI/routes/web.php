@@ -15,7 +15,6 @@ Route::get('/', 'DownloadController@showVideos');
 
 
 Route::post('/down_method','DownloadController@comeBack', function () {
-
 });
 
 Auth::routes();

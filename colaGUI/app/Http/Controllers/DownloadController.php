@@ -3,18 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Download;
- use Input;
- use App\descargas;
-
-
+use Input;
+use App\descargas;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
-
-
-
 /*/***//*/*/
-
 use PhpAmqpLib\Connection\AMQPStreamConnection;
 use PhpAmqpLib\Message\AMQPMessage;
 use App\Http\Controllers\DownloadController;
@@ -55,7 +49,7 @@ public function comeBack()
 
   $this->insercion();
   return redirect()->action('DownloadController@showVideos');
-  
+
 }
 
     /**
@@ -65,12 +59,9 @@ public function comeBack()
      */
     public function download($user_id, $link, $estado)
     {
-
-
            $descargas = array('user_id' => $user_id,
            'link' => $link,
            'estado' => $estado);
-
 
            // convert the array to json
            $data = json_encode($descargas);
@@ -85,9 +76,6 @@ public function comeBack()
             echo "La descarga ha finalizado", "\n";
             $channel->close();
             $connection->close();
-
-
-            // return redirect()->action('DownloadController@comeBack');
 
         }
 

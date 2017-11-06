@@ -21,3 +21,11 @@ Route::post('/down_method','DownloadController@comeBack', function () {
 Auth::routes();
 
 Route::get('/home', 'DownloadController@showVideos');
+
+Route::get('/home', 'EditController@update');
+
+
+
+
+
+

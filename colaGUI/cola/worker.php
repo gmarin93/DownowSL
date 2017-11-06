@@ -30,10 +30,21 @@ $data=json_decode($msg->body);
 
 try {
     $video = $dl->download($data->link);
-  //  echo $video->getTitle(), "\n"; // Will return Phonebloks
+
     echo "Datos: Id de usuario: ",$data->user_id,"  Link video: ", $data->link," Estado: ",$data->estado,"\n";
     echo "El archivo ha sido Descargado","\n";
-    //echo $msg;
+    $n="Descargado";
+
+
+    	$msg = new AMQPMessage(
+    		$n,
+    		array('correlation_id' => $msg->get('correlation_id'))
+    		);
+
+    	$req->delivery_info['channel']->basic_publish(
+    		$msg, '', $req->get('reply_to'));
+    	$req->delivery_info['channel']->basic_ack(
+    		$req->delivery_info['delivery_tag']);
 
 
 
@@ -48,6 +59,7 @@ try {
 }
 
 };
+$channel->basic_qos(null, 1, null);
 $channel->basic_consume('hello', '', false, true, false, false, $callback);
 while(count($channel->callbacks)) {
     $channel->wait();

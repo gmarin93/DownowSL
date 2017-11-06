@@ -1,5 +1,5 @@
-<?php
-include(__DIR__ . '/config.php');
+ <?php
+include(_DIR_ . '/config.php');
 
 
 use PhpAmqpLib\Connection\AMQPStreamConnection;
